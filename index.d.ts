@@ -3,8 +3,13 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 declare module 'cj-request' {
   export class CJRequest {
     instance: AxiosInstance
-    config: MYRequestConfig
     interceptors?: MYRequestInterceptors
+    constructor(config: MYRequestConfig)
+    request<T>(config: MYRequestConfig<T>): Promise<T>
+    get<T>(config: MYRequestConfig<T>): Promise<T>
+    post<T>(config: MYRequestConfig<T>): Promise<T>
+    delete<T>(config: MYRequestConfig<T>): Promise<T>
+    patch<T>(config: MYRequestConfig<T>): Promise<T>
   }
   export interface MYRequestInterceptors<T = AxiosResponse> {
     requestInterceptor?: (config: AxiosRequestConfig) => AxiosRequestConfig
