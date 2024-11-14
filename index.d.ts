@@ -1,7 +1,7 @@
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 
-declare module 'cj-request' {
-  class CJRequest {
+declare module 'cj_request' {
+  export default class CJRequest {
     instance: AxiosInstance
     interceptors?: MYRequestInterceptors
     constructor(config: MYRequestConfig)
