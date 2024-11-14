@@ -1,11 +1,11 @@
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 declare module 'cj-request' {
-  export function CJRequest(
-    instance: AxiosInstance,
-    config: MYRequestConfig,
-    interceptors?: MYRequestInterceptors,
-  );
+  export class CJRequest {
+    instance: AxiosInstance
+    config: MYRequestConfig
+    interceptors?: MYRequestInterceptors
+  }
   export interface MYRequestInterceptors<T = AxiosResponse> {
     requestInterceptor?: (config: AxiosRequestConfig) => AxiosRequestConfig
     requestInterceptorCatch?: (error: any) => any
